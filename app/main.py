@@ -22,7 +22,7 @@ from pydantic import BaseModel, Field
 VERSION = "2.1.0"
 SERVICE_NAME = "sm-data-governance"
 DISPLAY_NAME = "SM Data Governance"
-DESCRIPTION = "数据治理平台：数据目录、权限、脱敏、质量检测与数据血缘"
+DESCRIPTION = "数据治理与合规中心：数据目录、分级分类、脱敏与合规策略"
 ENVIRONMENT = os.getenv("SM_ENV", "development").lower()
 ALLOWED_HOSTS = [h.strip() for h in os.getenv("SM_ALLOWED_HOSTS", "localhost,127.0.0.1,testserver").split(",") if h.strip()]
 REQUESTS = {"total": 0, "errors": 0, "latency_ms_total": 0.0}
@@ -38,7 +38,7 @@ AUDIT_CENTER_URL = os.getenv("SM_AUDIT_CENTER_URL", "")
 INTEGRATION_DEPENDENCIES = ['sm-iam', 'sm-audit-log-center']
 INTEGRATION_EVENTS = ["health.checked", "resource.changed", "audit.recorded"]
 _db_conn: sqlite3.Connection | None = None
-_db_lock = threading.Lock()
+_db_lock = threading.RLock()
 
 
 def db() -> sqlite3.Connection:
