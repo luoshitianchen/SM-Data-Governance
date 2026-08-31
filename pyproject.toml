@@ -1,7 +1,16 @@
+[project]
+name = "SM-Data-Governance"
+version = "2.0.0"
+description = "数据治理平台：资产目录、脱敏规则、数据血缘与质量检测"
+requires-python = ">=3.11"
+
 [tool.ruff]
-line-length = 220
+line-length = 200
 target-version = "py311"
 
 [tool.ruff.lint]
-select = ["E4", "E7", "E9", "F", "B"]
-ignore = ["B008"]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
