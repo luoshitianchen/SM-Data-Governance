@@ -12,7 +12,7 @@ from pydantic import BaseModel, Field
 from app import base
 
 SERVICE = "sm-data-governance"
-VERSION = "2.0.0"
+VERSION = "3.0.0"
 NAME = "SM Data Governance"
 DESCRIPTION = "数据治理平台：数据资产、分级分类、治理策略与访问审批"
 PORT = 8360
