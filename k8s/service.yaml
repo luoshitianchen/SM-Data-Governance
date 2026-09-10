@@ -2,16 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: sm-data-governance
-  namespace: sm
-  labels:
-    app: sm-data-governance
-    platform: sm-suite
+  namespace: sm-platform
 spec:
   type: ClusterIP
+  ports:
+    - name: http
+      port: 8300
+      targetPort: http
   selector:
     app: sm-data-governance
-  ports:
-  - name: http
-    port: 8360
-    targetPort: http
-    protocol: TCP
