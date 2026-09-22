@@ -1,0 +1,12 @@
+apiVersion: v2
+name: sm-data-governance
+description: SM 微服务 Helm Chart - SM-Data-Governance（数据治理服务）
+type: application
+version: 1.0.0
+appVersion: "2.1.0"
+keywords:
+  - sm-microservices
+  - enterprise
+  - sm-data-governance
+maintainers:
+  - name: sm-platform-team
